@@ -4,6 +4,7 @@ import SearchForm from "./SearchForm";
 import MainCityIcon from "./MainCityIcon";
 import MainCityData from "./MainCityData";
 import CurrentConditions from "./CurrentConditions";
+import Footer from "./Footer";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );
