@@ -3,20 +3,23 @@ import "./CurrentConditions.css";
 
 export default function CurrentCondtions() {
   let conditions = {
-    currentTemp: 16,
+    maxTemp: 16,
+    minTemp: 4,
     currentWind: 10,
     currentHumidity: 62,
   };
   return (
-    <div className="MainCityData">
+    <div className="CurrentConditions">
       <div className="card-body">
         <div className="card-text-main">
-          Currently:{" "}
-          <span className="main-temp"> {conditions.currentTemp}°</span>
-        </div>
-        <div>
-          Wind: {conditions.currentWind} knts <br /> Humidity:{" "}
-          {conditions.currentHumidity}%
+          <ul>
+            <li>
+              Max Temp: <span className="max-temp"> {conditions.maxTemp}°</span>
+            </li>
+            <li>Min Temp: {conditions.minTemp}°</li>
+            <li>Wind: {conditions.currentWind} knts</li>
+            <li>Humidity: {conditions.currentHumidity}%</li>
+          </ul>
         </div>
       </div>
     </div>

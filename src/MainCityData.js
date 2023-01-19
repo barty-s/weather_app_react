@@ -13,11 +13,10 @@ export default function MainCityData() {
         <h2>{cityData.city}</h2>
         <div className="card-text">
           <div className="card-text-main">
-            {cityData.minTemp} /{" "}
-            <strong>
-              {" "}
-              {cityData.maxTemp} °C | <a href="/">°F</a>
-            </strong>
+            <span className="current-temp">16</span>{" "}
+            <span className="unit">
+              °C | <a href="/">°F</a>
+            </span>
           </div>
         </div>
       </div>

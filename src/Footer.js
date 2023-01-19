@@ -3,7 +3,7 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <div className="Footr">
+    <footer>
       Open-sourced on{" "}
       <a
         href="https://github.com/barty-s/weather_app_react"
@@ -12,6 +12,6 @@ export default function Footer() {
       >
         GitHub
       </a>
-    </div>
+    </footer>
   );
 }

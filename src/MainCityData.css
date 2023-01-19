@@ -1,3 +1,13 @@
 h2 {
   font-size: 40px;
 }
+
+.current-temp {
+  font-size: 44px;
+}
+
+.unit {
+  position: relative;
+  top: -24px;
+  margin-right: 3px;
+}
