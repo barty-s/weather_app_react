@@ -3,6 +3,7 @@ import axios from "axios";
 import MainCityIcon from "./MainCityIcon";
 import MainCityData from "./MainCityData";
 import CurrentConditions from "./CurrentConditions";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -11,6 +12,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
@@ -22,17 +24,12 @@ export default function Weather(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    search();
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a9079504eef286fcb131d4d133261ee2&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   function handleCityChange(event) {
     setCity(event.target.value);
-  }
-
-  function search() {
-    const apiKey = "a9079504eef286fcb131d4d133261ee2";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
   }
 
   if (setWeatherData.ready) {
@@ -51,7 +48,9 @@ export default function Weather(props) {
 
           <input className="btn btn-primary" type="submit" value="Search" />
         </form>
-        <div className="date">Thursday 19 Jan, 2023, 13:31</div>
+        <div className="date">
+          <FormattedDate date={weatherData.date} />
+        </div>
         <div className="card m-3 weatherData">
           <div className="row">
             <div className="col-sm-4">
@@ -68,7 +67,6 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    search();
     return "Loading...";
   }
 }
