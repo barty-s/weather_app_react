@@ -21,3 +21,7 @@ h1 {
   margin: 20px;
   font-weight: bold;
 }
+.date {
+  text-align: left;
+  margin-left: 15px;
+}
