@@ -1,19 +1,14 @@
 import React from "react";
 import "./MainCityData.css";
 
-export default function MainCityData() {
-  let cityData = {
-    city: "Vigo",
-    minTemp: 10,
-    maxTemp: 20,
-  };
+export default function MainCityData(props) {
   return (
     <div className="MainCityData">
       <div className="card-body">
-        <h2>{cityData.city}</h2>
+        <h2>{props.data.city}</h2>
         <div className="card-text">
           <div className="card-text-main">
-            <span className="current-temp">16</span>{" "}
+            <span className="current-temp">{props.data.temperature}</span>{" "}
             <span className="unit">
               °C | <a href="/">°F</a>
             </span>

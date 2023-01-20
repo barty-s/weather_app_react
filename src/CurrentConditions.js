@@ -1,24 +1,18 @@
 import React from "react";
 import "./CurrentConditions.css";
 
-export default function CurrentCondtions() {
-  let conditions = {
-    maxTemp: 16,
-    minTemp: 4,
-    currentWind: 10,
-    currentHumidity: 62,
-  };
+export default function CurrentCondtions(props) {
   return (
     <div className="CurrentConditions">
       <div className="card-body">
         <div className="card-text-main">
           <ul>
             <li>
-              Max Temp: <span className="max-temp"> {conditions.maxTemp}°</span>
+              Max Temp: <span className="max-temp"> 15°</span>
             </li>
-            <li>Min Temp: {conditions.minTemp}°</li>
-            <li>Wind: {conditions.currentWind} knts</li>
-            <li>Humidity: {conditions.currentHumidity}%</li>
+            <li>Min Temp: 4°</li>
+            <li>Wind: {props.data.wind} knts</li>
+            <li>Humidity: {props.data.humidity}%</li>
           </ul>
         </div>
       </div>
