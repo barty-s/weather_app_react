@@ -58,17 +58,16 @@ export default function Weather(props) {
         </div>
         <div className="card m-3 weatherData">
           <div className="row">
-            <div className="col-sm-4">
+            <div className="col-md-4">
               <MainCityIcon
                 icon={weatherData.icon}
                 alt={weatherData.description}
-                size={90}
               />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-4">
               <MainCityData data={weatherData} />
             </div>
-            <div className="col-sm-4">
+            <div className="col-md-4">
               <CurrentConditions data={weatherData} />
             </div>
           </div>

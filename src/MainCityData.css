@@ -1,13 +1,16 @@
 h2 {
-  font-size: 40px;
+  font-size: 49px;
 }
 
 .current-temp {
-  font-size: 44px;
+  font-size: 49px;
 }
 
 .unit {
   position: relative;
   top: -24px;
   margin-right: 3px;
+}
+.active {
+  font-weight: bold;
 }
