@@ -13,26 +13,30 @@ export default function Weather(props) {
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
-      temperature: response.data.main.temp,
+      temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-      wind: response.data.wind.speed,
+      wind: Math.round(response.data.wind.speed * 1.944),
       city: response.data.name,
     });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a9079504eef286fcb131d4d133261ee2&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
   }
 
   function handleCityChange(event) {
     setCity(event.target.value);
   }
 
-  if (setWeatherData.ready) {
+  function search() {
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a9079504eef286fcb131d4d133261ee2&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <h1>Weather App</h1>
@@ -67,6 +71,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
+    search();
     return "Loading...";
   }
 }
