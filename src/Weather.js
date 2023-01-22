@@ -4,6 +4,7 @@ import MainCityIcon from "./MainCityIcon";
 import MainCityData from "./MainCityData";
 import CurrentConditions from "./CurrentConditions";
 import FormattedDate from "./FormattedDate";
+import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -58,10 +59,11 @@ export default function Weather(props) {
         </div>
         <div className="card m-3 weatherData">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 mt-4">
               <MainCityIcon
                 icon={weatherData.icon}
                 alt={weatherData.description}
+                size={110}
               />
             </div>
             <div className="col-md-4">
@@ -71,6 +73,7 @@ export default function Weather(props) {
               <CurrentConditions data={weatherData} />
             </div>
           </div>
+          <WeatherForecast />
         </div>
       </div>
     );
