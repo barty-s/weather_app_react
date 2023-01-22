@@ -14,6 +14,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coord: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
@@ -73,7 +74,7 @@ export default function Weather(props) {
               <CurrentConditions data={weatherData} />
             </div>
           </div>
-          <WeatherForecast />
+          <WeatherForecast coord={weatherData.coord} />
         </div>
       </div>
     );
