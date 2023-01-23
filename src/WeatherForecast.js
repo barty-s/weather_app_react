@@ -14,7 +14,23 @@ export default function WeatherForecast(props) {
   }
 
   if (loaded) {
-    return <WeatherForecastDay data={forecast[1]} />;
+    return (
+      <div className="WeatherForecast mt-5">
+        <div className="row">
+          {forecast.map(function (dailyForecast, index) {
+            if ((index > 0) & (index < 6))
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            else {
+              return null;
+            }
+          })}
+        </div>
+      </div>
+    );
   } else {
     let longitude = props.coord.lon;
     let latitude = props.coord.lat;

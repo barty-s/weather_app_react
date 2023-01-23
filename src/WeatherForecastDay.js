@@ -9,16 +9,12 @@ export default function WeatherForecastDay(props) {
     return days[day];
   }
   return (
-    <div className="WeatherForecastDay">
-      <div className="row">
-        <div className="col">
-          <div className="Forecast-day">{day()}</div>
-          <MainCityIcon icon={props.data.weather[0].icon} size={40} />
-          <div className="Forecast-temps">
-            <span className="max-temp">{Math.round(props.data.temp.max)}°</span>
-            <span className="min-temp">{Math.round(props.data.temp.min)}°</span>
-          </div>
-        </div>
+    <div className="Forecast-day">
+      <div>{day()}</div>
+      <MainCityIcon icon={props.data.weather[0].icon} size={40} />
+      <div className="Forecast-temps">
+        <span className="max-temp">{Math.round(props.data.temp.max)}°</span>
+        <span className="min-temp">{Math.round(props.data.temp.min)}°</span>
       </div>
     </div>
   );
