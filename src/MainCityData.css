@@ -14,3 +14,7 @@ h2 {
 .active {
   font-weight: bold;
 }
+.MainCityData a {
+  color: #55758c;
+  text-decoration: none;
+}

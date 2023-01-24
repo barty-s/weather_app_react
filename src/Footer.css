@@ -1,13 +1,14 @@
-a {
+footer a {
   text-decoration: none;
-  color: #55758c;
+  color: white;
   transition: all ease-in-out 200ms;
 }
-a:hover {
+footer a:hover {
   font-weight: bold;
-  color: #55758c;
+  color: white;
 }
 
 footer {
-  margin-top: 50px;
+  margin-top: 10px;
+  color: white;
 }

@@ -7,7 +7,7 @@
   height: 30px;
   line-height: 19px;
   max-width: 100%;
-  padding: 10px 25px 10px 5px;
+  padding: 10px 45px 10px 5px;
   margin: 10px 15px 15px;
 }
 .btn {
@@ -24,4 +24,7 @@
   background: white;
   color: #55758c;
   border: solid 1px #55758c;
+}
+.weatherData {
+  text-align: center;
 }

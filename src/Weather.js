@@ -42,7 +42,6 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <h1>Weather App</h1>
         <form onSubmit={handleSubmit}>
           <input
             className="search-bar"
