@@ -71,7 +71,7 @@ export default function Weather(props) {
               <MainCityData data={weatherData} />
             </div>
             <div className="col-md-4">
-              <CurrentConditions data={weatherData} />
+              <CurrentConditions data={weatherData} coord={weatherData.coord} />
             </div>
           </div>
           <WeatherForecast coord={weatherData.coord} />
